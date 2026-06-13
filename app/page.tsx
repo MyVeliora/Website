@@ -1,5 +1,4 @@
-src="/veliora-icon.png"
-src="/veliora-mark.png"
+import Image from "next/image";
 import {
   Activity,
   ArrowRight,

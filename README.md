@@ -39,6 +39,45 @@ npm run start
 
 Vercel erkennt das Projekt über `package.json` automatisch als Next.js-App. Für ein Deployment muss dieses Repository nur mit Vercel verbunden werden.
 
+### Wartelistenformular konfigurieren
+
+Das Wartelistenformular sendet über einen externen Formularanbieter. Die Website erwartet den vollständigen Form-Endpoint in:
+
+```text
+NEXT_PUBLIC_WAITLIST_FORM_ENDPOINT
+```
+
+Empfohlene schnelle Variante mit Formspree:
+
+1. Bei Formspree ein Formular für MyVeliora erstellen.
+2. Als Empfänger-E-Mail `info@myveliora.ch` hinterlegen und die Adresse im Formspree-Konto bestätigen.
+3. Den Formspree-Endpoint kopieren, zum Beispiel `https://formspree.io/f/xxxxxxx`.
+4. Lokal eine Datei `.env.local` im Projektroot anlegen:
+
+```bash
+NEXT_PUBLIC_WAITLIST_FORM_ENDPOINT=https://formspree.io/f/xxxxxxx
+```
+
+5. In Vercel unter `Project Settings` → `Environment Variables` dieselbe Variable `NEXT_PUBLIC_WAITLIST_FORM_ENDPOINT` eintragen. Die Variable für Production, Preview und Development aktivieren und danach neu deployen.
+
+Lokaler Test:
+
+```bash
+npm install
+npm run dev
+```
+
+Dann die Website öffnen, das Wartelistenformular ausfüllen, die Datenschutz-Checkbox aktivieren und absenden. Bei korrektem Endpoint erscheint eine Erfolgsnachricht; zusätzlich sollte die Anfrage im Formspree-Dashboard und per E-Mail an `info@myveliora.ch` sichtbar sein.
+
+Live-Test:
+
+1. Änderungen zu GitHub hochladen.
+2. Vercel neu deployen lassen.
+3. Auf der Live-Domain das Formular mit einer eigenen Testadresse absenden.
+4. Prüfen, ob die Erfolgsnachricht erscheint und die E-Mail bei `info@myveliora.ch` bzw. im Formspree-Dashboard ankommt.
+
+Ohne `NEXT_PUBLIC_WAITLIST_FORM_ENDPOINT` zeigt das Formular bewusst eine Konfigurationsmeldung an und sendet keine Daten.
+
 ## Struktur
 
 ```text

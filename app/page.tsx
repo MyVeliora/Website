@@ -1,3 +1,5 @@
+src="/veliora-icon.png"
+src="/veliora-mark.png"
 import {
   Activity,
   ArrowRight,

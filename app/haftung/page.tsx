@@ -1,0 +1,66 @@
+import type { Metadata } from "next";
+import { LegalPageLayout } from "../components/legal-page-layout";
+
+export const metadata: Metadata = {
+  title: "Haftungsausschluss | MyVeliora",
+  description:
+    "Medizinischer Disclaimer und Haftungsausschluss für die Nutzung von MyVeliora."
+};
+
+export default function HaftungPage() {
+  return (
+    <LegalPageLayout
+      eyebrow="Haftungsausschluss"
+      intro="MyVeliora stellt Informationen zur Orientierung bereit. Die Inhalte ersetzen keine persönliche medizinische Beratung."
+      title="Medizinischer Disclaimer"
+    >
+      <section>
+        <h2 className="text-xl font-bold text-veliora-ink">
+          Keine medizinische Beratung
+        </h2>
+        <p className="mt-3">
+          MyVeliora ersetzt keine medizinische Beratung durch Ärztinnen, Ärzte,
+          Apothekerinnen, Apotheker oder andere qualifizierte Fachpersonen. Die
+          Inhalte dienen ausschließlich der Orientierung und Unterstützung im
+          Alltag.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-veliora-ink">
+          Keine Diagnose oder Therapieempfehlung
+        </h2>
+        <p className="mt-3">
+          MyVeliora stellt keine Diagnosen, gibt keine Therapieempfehlungen und
+          trifft keine medizinischen Entscheidungen. Hinweise, Gesundheitsdaten
+          und mögliche KI-Auswertungen können helfen, Informationen zu
+          strukturieren, ersetzen aber keine fachliche Beurteilung.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-veliora-ink">
+          Keine Notfalldienstleistung
+        </h2>
+        <p className="mt-3">
+          MyVeliora ist keine Notfalldienstleistung und erkennt oder löst
+          Notfälle nicht automatisch. Bei akuten Beschwerden, Unsicherheit oder
+          Notfällen sind immer eine Ärztin, ein Arzt, eine Apotheke oder der
+          zuständige Notruf zu kontaktieren.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-veliora-ink">
+          Keine Garantie für Vollständigkeit oder Richtigkeit
+        </h2>
+        <p className="mt-3">
+          Trotz sorgfältiger Aufbereitung übernehmen wir keine Garantie für die
+          Vollständigkeit, Aktualität oder Richtigkeit medizinischer
+          Informationen. Nutzerinnen und Nutzer verwenden die Inhalte
+          eigenverantwortlich.
+        </p>
+      </section>
+    </LegalPageLayout>
+  );
+}

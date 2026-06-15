@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   Activity,
   ArrowRight,
@@ -13,13 +12,16 @@ import {
   Watch
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { SiteFooter } from "./components/site-footer";
+import { SiteHeader } from "./components/site-header";
+import { VelioraLogo } from "./components/veliora-logo";
 import { WaitlistForm } from "./waitlist-form";
 
 const features = [
   {
     title: "Medikamentenerinnerungen",
     description:
-      "Einnahmen, Dosierungen und Routinen werden für den Alltag der Familie sichtbar.",
+      "Erinnerungen können helfen, Einnahmen, Dosierungen und Routinen im Alltag sichtbar zu halten.",
     icon: Pill
   },
   {
@@ -37,13 +39,13 @@ const features = [
   {
     title: "Smartwatch Integration",
     description:
-      "HealthKit- und Wearable-Daten können perspektivisch in Veliora zusammenlaufen.",
+      "HealthKit- und Wearable-Daten können perspektivisch zur Orientierung zusammenlaufen.",
     icon: Watch
   },
   {
     title: "Notfallsystem",
     description:
-      "Notfallkontakte, Hinweise und Eskalationswege sind vorbereitet, wenn es darauf ankommt.",
+      "Wichtige Kontakte und Hinweise sind vorbereitet, wenn schnelle Orientierung gebraucht wird.",
     icon: ShieldAlert
   }
 ];
@@ -59,48 +61,14 @@ export default function Home() {
     <main className="min-h-screen bg-[#F7FBFA] text-veliora-ink">
       <section className="relative overflow-hidden bg-white">
         <div className="absolute inset-0">
-          <Image
-            alt=""
-            className="h-full w-full object-cover opacity-[0.06] saturate-150"
-            fill
-            priority
-            sizes="100vw"
-            src="/veliora-icon.png"
+          <VelioraLogo
+            className="absolute -right-24 top-16 h-[520px] w-[520px] opacity-[0.045] sm:-right-10 lg:right-20"
+            decorative
           />
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(247,251,250,0.96)_0%,rgba(255,255,255,0.88)_48%,rgba(240,248,246,0.92)_100%)]" />
         </div>
 
-        <header className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
-          <a className="flex items-center gap-3" href="#top" aria-label="Veliora Start">
-            <span className="flex h-10 w-10 items-center justify-center rounded-md brand-gradient">
-              <Image
-                alt=""
-                className="h-6 w-6"
-                height={24}
-                src="/veliora-mark.png"
-                width={24}
-              />
-            </span>
-            <span className="text-lg font-bold">Veliora</span>
-          </a>
-          <nav className="hidden items-center gap-7 text-sm font-medium text-[#48636B] md:flex">
-            <a className="transition hover:text-veliora-ink" href="#funktionen">
-              Funktionen
-            </a>
-            <a className="transition hover:text-veliora-ink" href="#ueber">
-              Über Veliora
-            </a>
-            <a className="transition hover:text-veliora-ink" href="#warteliste">
-              Warteliste
-            </a>
-          </nav>
-          <a
-            className="hidden h-10 items-center justify-center rounded-md bg-veliora-ink px-4 text-sm font-semibold text-white transition hover:bg-[#17323d] sm:inline-flex"
-            href="#warteliste"
-          >
-            Zur Warteliste
-          </a>
-        </header>
+        <SiteHeader />
 
         <div
           className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 pb-14 pt-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:pb-16 lg:pt-12"
@@ -118,7 +86,8 @@ export default function Home() {
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#48636B] sm:text-xl">
               Medikamente, Arzttermine, Gesundheitsdaten und Notfallkontakte an
-              einem Ort.
+              einem Ort. Zur Orientierung, ohne medizinische Beratung zu
+              ersetzen.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -197,9 +166,9 @@ export default function Home() {
           <div className="space-y-6 text-lg leading-8 text-[#48636B]">
             <p>
               Veliora entsteht als Schweizer Gesundheitsplattform für Familien,
-              Seniorinnen und Senioren. Die App bringt medizinische Routinen,
-              Termine, Dokumente und Notfallinformationen in eine ruhige,
-              verlässliche Zentrale.
+              Seniorinnen und Senioren. Die App unterstützt dabei, medizinische
+              Routinen, Termine, Dokumente und Notfallinformationen in einer
+              ruhigen Übersicht zu strukturieren.
             </p>
             <p>
               Der Fokus liegt auf Orientierung statt Überforderung: klare
@@ -244,35 +213,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-veliora-line bg-veliora-ink px-6 py-8 text-white lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-white/10">
-              <Image
-                alt=""
-                className="h-5 w-5"
-                height={20}
-                src="/veliora-mark.png"
-                width={20}
-              />
-            </span>
-            <div>
-              <p className="font-bold">Veliora</p>
-              <p className="text-sm text-white/64">
-                Für die Menschen, die uns wichtig sind.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/64">
-            <span>© 2026 Veliora</span>
-            <a className="transition hover:text-white" href="#warteliste">
-              Kontakt
-            </a>
-            <span>Dies ersetzt keine medizinische Beratung.</span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

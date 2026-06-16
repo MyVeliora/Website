@@ -18,21 +18,21 @@ export default function ImpressumPage() {
         <dl className="mt-4 space-y-4">
           <div>
             <dt className="font-semibold text-veliora-ink">Betreiber</dt>
-            <dd>Danny Lorenzi CEO von MyVeliora</dd>
+            <dd>[Danny Lorenzi CEO von MyVeliora]</dd>
           </div>
           <div>
             <dt className="font-semibold text-veliora-ink">Adresse</dt>
-            <dd>Allestrasse 11, 8590 Romanshorn</dd>
+            <dd>[Allestrasse 11, 8590 Romanshorn]</dd>
           </div>
           <div>
             <dt className="font-semibold text-veliora-ink">E-Mail</dt>
-            <dd>info@myveliora.app</dd>
+            <dd>[info@myveliora.ch]</dd>
           </div>
           <div>
             <dt className="font-semibold text-veliora-ink">
               Verantwortlich für den Inhalt
             </dt>
-            <dd>Danny Lorenzi</dd>
+            <dd>[Danny Lorenzi]</dd>
           </div>
         </dl>
       </section>

@@ -2,6 +2,8 @@ import Link from "next/link";
 import { VelioraLogo } from "./veliora-logo";
 
 const footerLinks = [
+  { href: "/ueber-uns", label: "Über uns" },
+  { href: "/roadmap", label: "Roadmap" },
   { href: "/impressum", label: "Impressum" },
   { href: "/datenschutz", label: "Datenschutz" },
   { href: "/haftung", label: "Haftungsausschluss" },
